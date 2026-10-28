@@ -13,7 +13,242 @@
 </head>
 
 <body>
+ <style>
+        :root {
+            --negro: #09090d;
+            --oscuro: #121218;
+            --gris: #1c1c26;
+            --gris-claro: #c5c5d0;
+            --blanco: #f5f3fa;
+            --purpura: #9b5cff;
+            --purpura-claro: #bd91ff;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--negro);
+            color: var(--blanco);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BANNER: CONSERVADO */
+        .image {
+            width: 100%;
+            height: 640px;
+            background-image: url('banner.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* SECCIÓN DE SERVICIOS */
+        #servicios {
+            padding-top: 35px;
+            padding-bottom: 65px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .titulo-seccion span {
+            color: var(--purpura);
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: var(--gris-claro);
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        /* INTRODUCCIÓN */
+        .servicio-intro {
+            max-width: 950px;
+            margin: 0 auto 35px;
+            padding: 25px;
+            background: var(--oscuro);
+            border: 1px solid #292733;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .servicio-intro i {
+            color: var(--purpura-claro);
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .servicio-intro p {
+            color: var(--gris-claro);
+            font-size: 16px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* TARJETAS DEL PROCESO */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .servicio-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 25px;
+            background: var(--oscuro);
+            border: 1px solid #292733;
+            border-radius: 14px;
+        }
+
+        .servicio-icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
+            background: var(--gris);
+            border: 1px solid #393044;
+            border-radius: 12px;
+            color: var(--purpura-claro);
+            font-size: 23px;
+        }
+
+        .servicio-info h2 {
+            color: var(--blanco);
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin: 2px 0 10px;
+        }
+
+        .servicio-info p {
+            color: var(--gris-claro);
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* CIERRE */
+        .servicio-final {
+            margin-top: 30px;
+            padding: 22px;
+            background: var(--gris);
+            border-left: 4px solid var(--purpura);
+            border-radius: 8px;
+            color: var(--blanco);
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .servicio-final i {
+            color: var(--purpura-claro);
+            margin-right: 8px;
+        }
+
+        /* PIE DE PÁGINA */
+        #pie {
+            margin-top: 20px;
+            padding: 28px 15px;
+            background: #101016;
+            border-top: 1px solid #292733;
+            color: #aaa6b7;
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        #pie p {
+            margin: 0;
+        }
+
+        #pie span {
+            color: var(--purpura-claro);
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 768px) {
+            .image {
+                height: 640px;
+            }
+
+            #servicios {
+                padding-top: 20px;
+                padding-bottom: 40px;
+            }
+
+            .titulo-seccion {
+                letter-spacing: 2px;
+            }
+
+            .subtitulo {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+
+            .servicio-intro {
+                padding: 22px 18px;
+            }
+
+            .servicio-intro p {
+                font-size: 15px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .servicio-card {
+                padding: 20px;
+                gap: 14px;
+            }
+
+            .servicio-info h2 {
+                font-size: 16px;
+            }
+
+            .servicio-info p {
+                font-size: 14px;
+            }
+
+            .servicio-final {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .servicio-card {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .servicio-icono {
+                width: 43px;
+                height: 43px;
+                font-size: 19px;
+            }
+        }
+    </style>
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-dark" id="Navbar">
         <div class="container">
