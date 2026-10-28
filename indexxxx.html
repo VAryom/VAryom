@@ -3,87 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYUNIX</title>
+    <title>BYUNIX - Servicios</title>
+
     <link rel="icon" type="image/png" href="logogo.png">
     <link rel="stylesheet" href="apariencia 1.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"crossorigin="anonymous"/>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --negro: #09090d;
+            --oscuro: #121218;
+            --gris: #1c1c26;
+            --gris-claro: #c5c5d0;
+            --blanco: #f5f3fa;
+            --purpura: #9b5cff;
+            --purpura-claro: #bd91ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--negro);
+            color: var(--blanco);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BANNER: CONSERVADO */
+        .image {
+            width: 100%;
+            height: 640px;
+            background-image: url('banner.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* SECCIÓN DE SERVICIOS */
+        #servicios {
+            padding-top: 35px;
+            padding-bottom: 65px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .titulo-seccion span {
+            color: var(--purpura);
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: var(--gris-claro);
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        /* INTRODUCCIÓN */
+        .servicio-intro {
+            max-width: 950px;
+            margin: 0 auto 35px;
+            padding: 25px;
+            background: var(--oscuro);
+            border: 1px solid #292733;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .servicio-intro i {
+            color: var(--purpura-claro);
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .servicio-intro p {
+            color: var(--gris-claro);
+            font-size: 16px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* TARJETAS DEL PROCESO */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .servicio-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 25px;
+            background: var(--oscuro);
+            border: 1px solid #292733;
+            border-radius: 14px;
+        }
+
+        .servicio-icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
+            background: var(--gris);
+            border: 1px solid #393044;
+            border-radius: 12px;
+            color: var(--purpura-claro);
+            font-size: 23px;
+        }
+
+        .servicio-info h2 {
+            color: var(--blanco);
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin: 2px 0 10px;
+        }
+
+        .servicio-info p {
+            color: var(--gris-claro);
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* CIERRE */
+        .servicio-final {
+            margin-top: 30px;
+            padding: 22px;
+            background: var(--gris);
+            border-left: 4px solid var(--purpura);
+            border-radius: 8px;
+            color: var(--blanco);
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .servicio-final i {
+            color: var(--purpura-claro);
+            margin-right: 8px;
+        }
+
+        /* PIE DE PÁGINA */
+        #pie {
+            margin-top: 20px;
+            padding: 28px 15px;
+            background: #101016;
+            border-top: 1px solid #292733;
+            color: #aaa6b7;
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        #pie p {
+            margin: 0;
+        }
+
+        #pie span {
+            color: var(--purpura-claro);
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 768px) {
+            .image {
+                height: 640px;
+            }
+
+            #servicios {
+                padding-top: 20px;
+                padding-bottom: 40px;
+            }
+
+            .titulo-seccion {
+                letter-spacing: 2px;
+            }
+
+            .subtitulo {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+
+            .servicio-intro {
+                padding: 22px 18px;
+            }
+
+            .servicio-intro p {
+                font-size: 15px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .servicio-card {
+                padding: 20px;
+                gap: 14px;
+            }
+
+            .servicio-info h2 {
+                font-size: 16px;
+            }
+
+            .servicio-info p {
+                font-size: 14px;
+            }
+
+            .servicio-final {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .servicio-card {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .servicio-icono {
+                width: 43px;
+                height: 43px;
+                font-size: 19px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="Navbar"  style="position: sticky; top: 0; z-index: 1000;">
-    <div class="container">
-    <a class="navbar-brand" href="#"> <i class="fas fa-brain"></i> BYUNIX</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="Navbar">
+        <div class="container">
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-    
-            <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">INICIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexx.html">MISIÓN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexxx.html">VISIÓN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#hii">SERVICIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexxxxx.html">CONTACTO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indez.html">MÁS</a>
-            </li>
-            
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-brain"></i> BYUNIX
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Abrir menú">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">INICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexx.html">MISIÓN</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxx.html">VISIÓN</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">SERVICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxxxx.html">CONTACTO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indez.html">MÁS</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- BANNER: SIN CAMBIOS -->
+    <section id="inicio">
+        <div class="image">
+            <img src="banener.png"
+                style="width: 100%; height: 640px; object-fit: cover;">
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="container">
+
+        <h1 class="titulo-seccion">
+            NUESTROS <span>SERVICIOS</span>
+        </h1>
+
+        <p class="subtitulo">
+            De una idea inicial a un prototipo funcional.
+        </p>
+
+        <div class="servicio-intro">
+            <i class="fas fa-lightbulb"></i>
+
+            <p>
+                Nuestro servicio consiste en diseñar y crear prototipos
+                personalizados a partir de las ideas de nuestros clientes.
+                El proceso comienza cuando el cliente presenta una idea,
+                necesidad o problema que quiere solucionar. A partir de esa
+                información, analizamos la propuesta y buscamos una forma
+                de convertirla en un diseño concreto.
+            </p>
         </div>
 
-    </div>
-    </nav>
-<!-- banner -->
-    <section id="inicio">
-    <div class="image">
-        <img src="banener.png" style="width: 100%; height: 640px; object-fit: cover;">
-    </div>
-</section> <br><br><br>
-    
+        <div class="servicios-grid">
 
-<h1 id="hii"><center>servicio</center></h1>
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
 
-<h3><center>BYUNIX</center></h3>
+                <div class="servicio-info">
+                    <h2>DESARROLLO DE LA IDEA</h2>
+                    <p>
+                        Analizamos qué quiere conseguir el cliente y qué
+                        características debe tener el proyecto.
+                    </p>
+                </div>
+            </article>
 
-<div class="container" style="width: 500;">
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-palette"></i>
+                </div>
 
-<p><center>Nuestro servicio consiste en diseñar y crear prototipos personalizados a partir de las ideas de nuestros clientes.</center></p>
+                <div class="servicio-info">
+                    <h2>DISEÑO</h2>
+                    <p>
+                        Creamos el diseño visual y estructural del prototipo,
+                        buscando que sea atractivo y funcional.
+                    </p>
+                </div>
+            </article>
 
-<p><center>El proceso comienza cuando el cliente presenta una idea, necesidad o problema que quiere solucionar. A partir de esa información, analizamos la propuesta y buscamos una forma de convertirla en un diseño concreto.</center></p>
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-ruler-combined"></i>
+                </div>
 
-<p><center><b>💡 Desarrollo de la idea:</b> analizamos qué quiere conseguir el cliente y qué características debe tener el proyecto.</center></p>
+                <div class="servicio-info">
+                    <h2>PLANEACIÓN</h2>
+                    <p>
+                        Seleccionamos los materiales, componentes y tecnologías
+                        necesarias para construirlo.
+                    </p>
+                </div>
+            </article>
 
-<p><center><b>🎨 Diseño:</b> creamos el diseño visual y estructural del prototipo, buscando que sea atractivo y funcional.</center></p>
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                </div>
 
-<p><center><b>📐 Planeación:</b> seleccionamos los materiales, componentes y tecnologías necesarias para construirlo.</center></p>
+                <div class="servicio-info">
+                    <h2>CONSTRUCCIÓN</h2>
+                    <p>
+                        Desarrollamos físicamente el prototipo utilizando
+                        los materiales y componentes adecuados.
+                    </p>
+                </div>
+            </article>
 
-<p><center><b>🔧 Construcción:</b> desarrollamos físicamente el prototipo utilizando los materiales y componentes adecuados.</center></p>
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-code"></i>
+                </div>
 
-<p><center><b>💻 Programación:</b> cuando el proyecto lo necesita, desarrollamos el código para controlar sensores, motores, luces, mecanismos u otros componentes.</center></p>
+                <div class="servicio-info">
+                    <h2>PROGRAMACIÓN</h2>
+                    <p>
+                        Cuando el proyecto lo necesita, desarrollamos el código
+                        para controlar sensores, motores, luces, mecanismos
+                        u otros componentes.
+                    </p>
+                </div>
+            </article>
 
-<p><center><b>🤖 Automatización:</b> podemos incorporar sistemas de robótica y sensores para que el prototipo pueda realizar determinadas acciones automáticamente.</center></p>
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-robot"></i>
+                </div>
 
-<p><center><b>🧪 Pruebas y mejoras:</b> probamos el funcionamiento del prototipo, identificamos errores y realizamos modificaciones para mejorar su funcionamiento.</center></p>
+                <div class="servicio-info">
+                    <h2>AUTOMATIZACIÓN</h2>
+                    <p>
+                        Podemos incorporar sistemas de robótica y sensores
+                        para que el prototipo pueda realizar determinadas
+                        acciones automáticamente.
+                    </p>
+                </div>
+            </article>
 
-</div><br><br><br>
-    
-    
-    <br><center>
-<div class="text "id="pie">
-            <p>TODOS LOS DERECHOS PA MI :]</p>
-</div></center>
+            <article class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-flask"></i>
+                </div>
+
+                <div class="servicio-info">
+                    <h2>PRUEBAS Y MEJORAS</h2>
+                    <p>
+                        Probamos el funcionamiento del prototipo, identificamos
+                        errores y realizamos modificaciones para mejorar
+                        su funcionamiento.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="servicio-final">
+            <i class="fas fa-gears"></i>
+            En BYUNIX combinamos creatividad, diseño y tecnología para
+            transformar ideas en prototipos personalizados.
+        </div>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="pie">
+        <p>TODOS LOS DERECHOS PA MI <span> :] </span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
