@@ -4,7 +4,337 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BYUNIX</title>
+    <link rel="icon" type="image/png" href="logogo.png">```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYUNIX - Visión</title>
+
     <link rel="icon" type="image/png" href="logogo.png">
+    <link rel="stylesheet" href="apariencia 1.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --negro: #09090d;
+            --oscuro: #121218;
+            --gris: #1c1c26;
+            --gris-claro: #c5c5d0;
+            --blanco: #f5f3fa;
+            --purpura: #9b5cff;
+            --purpura-claro: #bd91ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--negro);
+            color: var(--blanco);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BANNER: CONSERVADO */
+        .image {
+            width: 100%;
+            height: 640px;
+            background-image: url('banner.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* CONTENIDO DE LA VISIÓN */
+        #vision {
+            padding-top: 35px;
+            padding-bottom: 65px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .titulo-seccion span {
+            color: var(--purpura);
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: var(--gris-claro);
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .vision-card {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 35px;
+            background: var(--oscuro);
+            border: 1px solid #292733;
+            border-radius: 16px;
+        }
+
+        .vision-icono {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 25px;
+            background: var(--gris);
+            border: 1px solid #393044;
+            border-radius: 18px;
+            color: var(--purpura-claro);
+            font-size: 32px;
+        }
+
+        .vision-card h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .vision-card h2 span {
+            color: var(--purpura);
+        }
+
+        .vision-texto {
+            color: var(--gris-claro);
+            font-size: 16px;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .vision-texto:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .vision-destacado {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--gris);
+            border-left: 4px solid var(--purpura);
+            border-radius: 8px;
+            color: var(--blanco);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .vision-destacado i {
+            color: var(--purpura-claro);
+            margin-right: 8px;
+        }
+
+        /* PIE DE PÁGINA */
+        #pie {
+            margin-top: 20px;
+            padding: 28px 15px;
+            background: #101016;
+            border-top: 1px solid #292733;
+            color: #aaa6b7;
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        #pie p {
+            margin: 0;
+        }
+
+        #pie span {
+            color: var(--purpura-claro);
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 768px) {
+            .image {
+                height: 640px;
+            }
+
+            #vision {
+                padding-top: 20px;
+                padding-bottom: 40px;
+            }
+
+            .titulo-seccion {
+                letter-spacing: 2px;
+            }
+
+            .subtitulo {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+
+            .vision-card {
+                padding: 25px 20px;
+            }
+
+            .vision-card h2 {
+                font-size: 21px;
+                letter-spacing: 2px;
+            }
+
+            .vision-texto {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .vision-destacado {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="Navbar">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-brain"></i> BYUNIX
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Abrir menú">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">INICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexx.html">MISIÓN</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vision">VISIÓN</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxxx.html">SERVICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxxxx.html">CONTACTO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indez.html">MÁS</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- BANNER: SIN CAMBIOS -->
+    <section id="inicio">
+        <div class="image">
+            <img src="banener.png"
+                style="width: 100%; height: 640px; object-fit: cover;">
+        </div>
+    </section>
+
+    <!-- VISIÓN -->
+    <section id="vision" class="container">
+
+        <h1 class="titulo-seccion">
+            NUESTRA <span>VISIÓN</span>
+        </h1>
+
+        <p class="subtitulo">
+            Innovación y tecnología para hacer realidad nuevas ideas.
+        </p>
+
+        <div class="vision-card">
+
+            <div class="vision-icono">
+                <i class="fas fa-eye"></i>
+            </div>
+
+            <h2>
+                ¿HACIA DÓNDE <span>VAMOS?</span>
+            </h2>
+
+            <p class="vision-texto">
+                Convertirnos en una empresa reconocida por convertir ideas
+                creativas en prototipos y soluciones tecnológicas reales,
+                destacándonos por la innovación, el diseño y la capacidad
+                de crear proyectos personalizados.
+            </p>
+
+            <p class="vision-texto">
+                A futuro, buscamos ampliar nuestros servicios para trabajar
+                con diferentes tipos de proyectos, integrando cada vez más
+                tecnologías como robótica, programación, automatización,
+                diseño digital y fabricación de piezas.
+            </p>
+
+            <p class="vision-texto">
+                Queremos que nuestros clientes encuentren en nuestra empresa
+                un espacio donde puedan presentar una idea, incluso si
+                todavía no saben exactamente cómo realizarla, y recibir
+                el apoyo necesario para convertirla en un prototipo que
+                puedan visualizar, probar y mejorar.
+            </p>
+
+            <p class="vision-texto">
+                Nuestro propósito es demostrar que mediante la creatividad,
+                la imaginación y la tecnología, es posible crear soluciones
+                originales para diferentes necesidades y problemas.
+            </p>
+
+            <div class="vision-destacado">
+                <i class="fas fa-rocket"></i>
+                Nuestro futuro es transformar ideas en proyectos tecnológicos
+                innovadores, personalizados y capaces de resolver problemas reales.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="pie">
+        <p>TODOS LOS DERECHOS PA MI <span> :] </span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
     <link rel="stylesheet" href="apariencia 1.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"crossorigin="anonymous"/>
