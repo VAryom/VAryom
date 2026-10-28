@@ -1,84 +1,338 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="logogo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYUNIX</title>
+    <title>BYUNIX - Misión</title>
+
+    <link rel="icon" type="image/png" href="logogo.png">
     <link rel="stylesheet" href="apariencia 1.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"crossorigin="anonymous"/>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --negro: #09090d;
+            --oscuro: #121218;
+            --gris: #1c1c26;
+            --gris-claro: #c5c5d0;
+            --blanco: #f5f3fa;
+            --purpura: #9b5cff;
+            --purpura-claro: #bd91ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--negro);
+            color: var(--blanco);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BANNER: CONSERVADO */
+        .image {
+            width: 100%;
+            height: 640px;
+            background-image: url('banner.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* CONTENIDO DE LA MISIÓN */
+        #mision {
+            padding-top: 35px;
+            padding-bottom: 65px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .titulo-seccion span {
+            color: var(--purpura);
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: var(--gris-claro);
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .mision-card {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 35px;
+            background: var(--oscuro);
+            border: 1px solid #292733;
+            border-radius: 16px;
+        }
+
+        .mision-icono {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 25px;
+            background: var(--gris);
+            border: 1px solid #393044;
+            border-radius: 18px;
+            color: var(--purpura-claro);
+            font-size: 32px;
+        }
+
+        .mision-card h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .mision-card h2 span {
+            color: var(--purpura);
+        }
+
+        .mision-texto {
+            color: var(--gris-claro);
+            font-size: 16px;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .mision-texto:last-child {
+            margin-bottom: 0;
+        }
+
+        .mision-destacado {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--gris);
+            border-left: 4px solid var(--purpura);
+            border-radius: 8px;
+            color: var(--blanco);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .mision-destacado i {
+            color: var(--purpura-claro);
+            margin-right: 8px;
+        }
+
+        /* PIE DE PÁGINA */
+        #pie {
+            margin-top: 20px;
+            padding: 28px 15px;
+            background: #101016;
+            border-top: 1px solid #292733;
+            color: #aaa6b7;
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        #pie p {
+            margin: 0;
+        }
+
+        #pie span {
+            color: var(--purpura-claro);
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 768px) {
+            .image {
+                height: 640px;
+            }
+
+            #mision {
+                padding-top: 20px;
+                padding-bottom: 40px;
+            }
+
+            .titulo-seccion {
+                letter-spacing: 2px;
+            }
+
+            .subtitulo {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+
+            .mision-card {
+                padding: 25px 20px;
+            }
+
+            .mision-card h2 {
+                font-size: 21px;
+                letter-spacing: 2px;
+            }
+
+            .mision-texto {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .mision-destacado {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="Navbar"  style="position: sticky; top: 0; z-index: 1000;">
-    <div class="container">
-    <a class="navbar-brand" href="#"> <i class="fas fa-brain"></i> BYUNIX</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="Navbar"
+        style="position: sticky; top: 0; z-index: 1000;">
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-    
-            <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">INICIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#mision">MISIÓN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexxx.html">VISIÓN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexxxx.html">SERVICIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexxxxx.html">CONTACTO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indez.html">MÁS</a>
-            </li>
-            
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-brain"></i> BYUNIX
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Abrir menú">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">INICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mision">MISIÓN</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxx.html">VISIÓN</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxxx.html">SERVICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexxxxx.html">CONTACTO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="indez.html">MÁS</a>
+                    </li>
+
+                </ul>
+            </div>
+
         </div>
-
-    </div>
     </nav>
-<!-- banner -->
+
+    <!-- BANNER: SIN CAMBIOS -->
     <section id="inicio">
-    <div class="image">
-        <img src="banener.png" style="width: 100%; height: 640px; object-fit: cover;">
-    </div>
-</section> <br><br><br>
-    <center><h1 id="hii"><center>misión</center></h1>
+        <div class="image">
+            <img src="banener.png"
+                style="width: 100%; height: 640px; object-fit: cover;">
+        </div>
+    </section>
 
-<h3><center>BYUNIX</center></h3>
+    <!-- MISIÓN -->
+    <section id="mision" class="container">
 
-<div class="container" style="width: 500;">
+        <h1 class="titulo-seccion">
+            NUESTRA <span>MISIÓN</span>
+        </h1>
 
-<p><center>Convertir las ideas y necesidades de nuestros clientes en prototipos innovadores, funcionales y personalizados, utilizando herramientas de diseño, programación, robótica y fabricación.</center></p>
+        <p class="subtitulo">
+            Transformamos ideas en soluciones reales.
+        </p>
 
-<p><center>Buscamos acompañar al cliente durante todo el proceso, desde la creación de la idea y el diseño inicial hasta la construcción y programación del prototipo.</center></p>
+        <div class="mision-card">
 
-<p><center>Nuestro objetivo es ofrecer soluciones creativas que no solo tengan una buena apariencia, sino que también sean útiles, funcionales y capaces de resolver problemas reales.</center></p>
+            <div class="mision-icono">
+                <i class="fas fa-brain"></i>
+            </div>
 
-<p><center>Cada proyecto será desarrollado teniendo en cuenta las necesidades, gustos y objetivos del cliente, buscando que el resultado final represente de la mejor manera posible su idea original.</center></p>
+            <h2>
+                ¿QUIÉNES <span>SOMOS?</span>
+            </h2>
 
-<p><center>Además, buscamos fomentar el uso de la tecnología y la creatividad como herramientas para convertir ideas que parecen difíciles de realizar en proyectos concretos y funcionales.</center></p>
+            <p class="mision-texto">
+                Convertir las ideas y necesidades de nuestros clientes en
+                prototipos innovadores, funcionales y personalizados,
+                utilizando herramientas de diseño, programación, robótica
+                y fabricación.
+            </p>
 
-</div><br><br><br>
+            <p class="mision-texto">
+                Buscamos acompañar al cliente durante todo el proceso,
+                desde la creación de la idea y el diseño inicial hasta
+                la construcción y programación del prototipo.
+            </p>
 
-    </center></div><br><br><br>
+            <p class="mision-texto">
+                Nuestro objetivo es ofrecer soluciones creativas que no
+                solo tengan una buena apariencia, sino que también sean
+                útiles, funcionales y capaces de resolver problemas reales.
+            </p>
 
-    
-    
-    
-    
-    <br><center>
-<div class="text "id="pie">
-            <p>TODOS LOS DERECHOS PA MI :]</p>
-</div></center>
+            <p class="mision-texto">
+                Cada proyecto será desarrollado teniendo en cuenta las
+                necesidades, gustos y objetivos del cliente, buscando que
+                el resultado final represente de la mejor manera posible
+                su idea original.
+            </p>
+
+            <p class="mision-texto">
+                Además, buscamos fomentar el uso de la tecnología y la
+                creatividad como herramientas para convertir ideas que
+                parecen difíciles de realizar en proyectos concretos
+                y funcionales.
+            </p>
+
+            <div class="mision-destacado">
+                <i class="fas fa-lightbulb"></i>
+                Convertimos la creatividad, el diseño y la tecnología
+                en prototipos útiles que hacen realidad las ideas.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="pie">
+        <p>TODOS LOS DERECHOS PA MI <span> :] </span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+```
